@@ -87,7 +87,7 @@ class AuthController extends Controller
                 ]);
             } else {
                 Auth::login($user);
-                return redirect()->route('home');
+                return redirect()->route('check');
             }
         } catch (\Throwable $th) {
             return redirect()->route('login')->with('error', 'An error occurred while logging in. ' . $th->getMessage())->withInput();
