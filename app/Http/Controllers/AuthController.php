@@ -103,4 +103,15 @@ class AuthController extends Controller
     {
         return 'You are logged in as ' . Auth::user()->name;
     }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function logout(): RedirectResponse
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }
